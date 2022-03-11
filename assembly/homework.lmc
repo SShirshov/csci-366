@@ -3,5 +3,29 @@
 ;; Paste the code below, along with the output
 
 ;; CODE   =====================================
-
+BEGIN   LDA  PRINT
+        OUT
+        ADD  ONE
+        STA  PRINT
+        LDA  COUNT
+        ADD  ONE
+        STA  COUNT
+        LDA  MCNT
+        SUB  COUNT
+        BRP  BEGIN
+        HLT
+ONE     DAT  1ß
+PRINT   DAT  1
+COUNT   DAT  1
+MCNT    DAT  10
 ;; OUTPUT =====================================
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
