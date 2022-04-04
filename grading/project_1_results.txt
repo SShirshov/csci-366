@@ -1,39 +1,8 @@
-Scanning dependencies of target lmsm_lib
-[  4%] Building C object CMakeFiles/lmsm_lib.dir/src/main.c.o
-[  8%] Building C object CMakeFiles/lmsm_lib.dir/src/lmsm.c.o
-[ 13%] Building C object CMakeFiles/lmsm_lib.dir/src/assembler.c.o
-[ 17%] Building C object CMakeFiles/lmsm_lib.dir/src/repl.c.o
-[ 21%] Linking C static library liblmsm_lib.a
 [ 21%] Built target lmsm_lib
-Scanning dependencies of target lmsm
-[ 26%] Building C object CMakeFiles/lmsm.dir/src/main.c.o
-[ 30%] Building C object CMakeFiles/lmsm.dir/src/lmsm.c.o
-[ 34%] Building C object CMakeFiles/lmsm.dir/src/assembler.c.o
-[ 39%] Building C object CMakeFiles/lmsm.dir/src/repl.c.o
-[ 43%] Linking C executable lmsm
 [ 43%] Built target lmsm
-Scanning dependencies of target gtest
-[ 47%] Building CXX object googletest/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
-[ 52%] Linking CXX static library ../../../lib/libgtest.a
 [ 52%] Built target gtest
-Scanning dependencies of target gtest_main
-[ 56%] Building CXX object googletest/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
-[ 60%] Linking CXX static library ../../../lib/libgtest_main.a
 [ 60%] Built target gtest_main
-Scanning dependencies of target lmsm_tests
-[ 65%] Building CXX object googletest/CMakeFiles/lmsm_tests.dir/assembler.cpp.o
-[ 69%] Building CXX object googletest/CMakeFiles/lmsm_tests.dir/lmsm.cpp.o
-[ 73%] Linking CXX executable lmsm_tests
 [ 73%] Built target lmsm_tests
-Scanning dependencies of target lmsm_emulator_tests
-[ 78%] Building CXX object googletest/CMakeFiles/lmsm_emulator_tests.dir/lmsm.cpp.o
-[ 82%] Linking CXX executable lmsm_emulator_tests
 [ 82%] Built target lmsm_emulator_tests
-Scanning dependencies of target gmock
-[ 86%] Building CXX object googletest/lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
-[ 91%] Linking CXX static library ../../../lib/libgmock.a
 [ 91%] Built target gmock
-Scanning dependencies of target gmock_main
-[ 95%] Building CXX object googletest/lib/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
-[100%] Linking CXX static library ../../../lib/libgmock_main.a
 [100%] Built target gmock_main
