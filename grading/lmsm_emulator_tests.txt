@@ -1,0 +1,87 @@
+Running main() from /home/carson/Projects/msu/csci-366-spring2022/grading/scripts/repos/simeon_shirshov/c/lmsm/googletest/lib/googletest/src/gtest_main.cc
+[==========] Running 39 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 39 tests from lmsm_machine_suite
+[ RUN      ] lmsm_machine_suite.test_add_instruction_works
+[       OK ] lmsm_machine_suite.test_add_instruction_works (0 ms)
+[ RUN      ] lmsm_machine_suite.test_add_instruction_properly_caps_values
+[       OK ] lmsm_machine_suite.test_add_instruction_properly_caps_values (0 ms)
+[ RUN      ] lmsm_machine_suite.test_sub_instruction_works
+[       OK ] lmsm_machine_suite.test_sub_instruction_works (0 ms)
+[ RUN      ] lmsm_machine_suite.test_sub_instruction_properly_caps_values
+[       OK ] lmsm_machine_suite.test_sub_instruction_properly_caps_values (0 ms)
+[ RUN      ] lmsm_machine_suite.test_store_instruction_works
+[       OK ] lmsm_machine_suite.test_store_instruction_works (0 ms)
+[ RUN      ] lmsm_machine_suite.test_load_instruction_works
+[       OK ] lmsm_machine_suite.test_load_instruction_works (0 ms)
+[ RUN      ] lmsm_machine_suite.test_branch_instruction_works
+[       OK ] lmsm_machine_suite.test_branch_instruction_works (0 ms)
+[ RUN      ] lmsm_machine_suite.test_branch_if_zero_instruction_works_when_val_zero
+[       OK ] lmsm_machine_suite.test_branch_if_zero_instruction_works_when_val_zero (0 ms)
+[ RUN      ] lmsm_machine_suite.test_branch_if_zero_instruction_works_when_val_not_zero
+[       OK ] lmsm_machine_suite.test_branch_if_zero_instruction_works_when_val_not_zero (0 ms)
+[ RUN      ] lmsm_machine_suite.test_branch_if_positive_instruction_works_when_val_zero
+[       OK ] lmsm_machine_suite.test_branch_if_positive_instruction_works_when_val_zero (0 ms)
+[ RUN      ] lmsm_machine_suite.test_branch_if_positive_instruction_works_when_val_positive
+[       OK ] lmsm_machine_suite.test_branch_if_positive_instruction_works_when_val_positive (0 ms)
+[ RUN      ] lmsm_machine_suite.test_branch_if_positive_instruction_works_when_val_not_positive
+[       OK ] lmsm_machine_suite.test_branch_if_positive_instruction_works_when_val_not_positive (0 ms)
+[ RUN      ] lmsm_machine_suite.test_output_instruction
+[       OK ] lmsm_machine_suite.test_output_instruction (0 ms)
+[ RUN      ] lmsm_machine_suite.test_halt_instruction
+[       OK ] lmsm_machine_suite.test_halt_instruction (0 ms)
+[ RUN      ] lmsm_machine_suite.test_load_immediate_instruction
+[       OK ] lmsm_machine_suite.test_load_immediate_instruction (0 ms)
+[ RUN      ] lmsm_machine_suite.test_push_instruction
+[       OK ] lmsm_machine_suite.test_push_instruction (0 ms)
+[ RUN      ] lmsm_machine_suite.test_pop_instruction_removes_top_of_stack
+[       OK ] lmsm_machine_suite.test_pop_instruction_removes_top_of_stack (0 ms)
+[ RUN      ] lmsm_machine_suite.test_pop_instruction_enters_error_state_if_nothing_to_pop
+[       OK ] lmsm_machine_suite.test_pop_instruction_enters_error_state_if_nothing_to_pop (0 ms)
+[ RUN      ] lmsm_machine_suite.test_dup_instruction_duplicates_top_of_stack
+[       OK ] lmsm_machine_suite.test_dup_instruction_duplicates_top_of_stack (0 ms)
+[ RUN      ] lmsm_machine_suite.test_sadd_instruction_adds_the_values_on_the_stack
+[       OK ] lmsm_machine_suite.test_sadd_instruction_adds_the_values_on_the_stack (0 ms)
+[ RUN      ] lmsm_machine_suite.test_sadd_instruction_properly_caps_values
+[       OK ] lmsm_machine_suite.test_sadd_instruction_properly_caps_values (0 ms)
+[ RUN      ] lmsm_machine_suite.test_sadd_instruction_enters_error_state_if_not_enough_elts
+[       OK ] lmsm_machine_suite.test_sadd_instruction_enters_error_state_if_not_enough_elts (0 ms)
+[ RUN      ] lmsm_machine_suite.test_ssub_instruction_subtracts_the_values_on_the_stack
+[       OK ] lmsm_machine_suite.test_ssub_instruction_subtracts_the_values_on_the_stack (0 ms)
+[ RUN      ] lmsm_machine_suite.test_ssub_instruction_properly_caps_values
+[       OK ] lmsm_machine_suite.test_ssub_instruction_properly_caps_values (0 ms)
+[ RUN      ] lmsm_machine_suite.test_ssub_instruction_subtracts_the_values_on_the_stack_in_the_right_order
+[       OK ] lmsm_machine_suite.test_ssub_instruction_subtracts_the_values_on_the_stack_in_the_right_order (0 ms)
+[ RUN      ] lmsm_machine_suite.test_ssub_instruction_enters_error_state_if_not_enough_elts
+[       OK ] lmsm_machine_suite.test_ssub_instruction_enters_error_state_if_not_enough_elts (0 ms)
+[ RUN      ] lmsm_machine_suite.test_smax_instruction_sets_max_val_on_stack
+[       OK ] lmsm_machine_suite.test_smax_instruction_sets_max_val_on_stack (0 ms)
+[ RUN      ] lmsm_machine_suite.test_smax_instruction_enters_error_state_if_not_enough_elts
+[       OK ] lmsm_machine_suite.test_smax_instruction_enters_error_state_if_not_enough_elts (0 ms)
+[ RUN      ] lmsm_machine_suite.test_smin_instruction_sets_min_val_on_stack
+[       OK ] lmsm_machine_suite.test_smin_instruction_sets_min_val_on_stack (0 ms)
+[ RUN      ] lmsm_machine_suite.test_smin_instruction_enters_error_state_if_not_enough_elts
+[       OK ] lmsm_machine_suite.test_smin_instruction_enters_error_state_if_not_enough_elts (0 ms)
+[ RUN      ] lmsm_machine_suite.test_smul_instruction_multiplies_the_values_on_the_stack
+[       OK ] lmsm_machine_suite.test_smul_instruction_multiplies_the_values_on_the_stack (0 ms)
+[ RUN      ] lmsm_machine_suite.test_smul_instruction_properly_caps_values
+[       OK ] lmsm_machine_suite.test_smul_instruction_properly_caps_values (0 ms)
+[ RUN      ] lmsm_machine_suite.test_smul_instruction_enters_error_state_if_not_enough_elts
+[       OK ] lmsm_machine_suite.test_smul_instruction_enters_error_state_if_not_enough_elts (0 ms)
+[ RUN      ] lmsm_machine_suite.test_sdiv_instruction_divides_the_values_on_the_stack
+[       OK ] lmsm_machine_suite.test_sdiv_instruction_divides_the_values_on_the_stack (0 ms)
+[ RUN      ] lmsm_machine_suite.test_sdiv_instruction_enters_error_state_if_not_enough_elts
+[       OK ] lmsm_machine_suite.test_sdiv_instruction_enters_error_state_if_not_enough_elts (0 ms)
+[ RUN      ] lmsm_machine_suite.test_call_instruction_pushes_next_address_onto_stack
+[       OK ] lmsm_machine_suite.test_call_instruction_pushes_next_address_onto_stack (0 ms)
+[ RUN      ] lmsm_machine_suite.test_return_instruction_returns_to_address_on_top_of_call_stack
+[       OK ] lmsm_machine_suite.test_return_instruction_returns_to_address_on_top_of_call_stack (0 ms)
+[ RUN      ] lmsm_machine_suite.step_steps_to_the_next_instruction_and_executes_current
+[       OK ] lmsm_machine_suite.step_steps_to_the_next_instruction_and_executes_current (0 ms)
+[ RUN      ] lmsm_machine_suite.step_does_not_step_to_the_next_instruction_and_execute_if_machine_is_halted
+[       OK ] lmsm_machine_suite.step_does_not_step_to_the_next_instruction_and_execute_if_machine_is_halted (0 ms)
+[----------] 39 tests from lmsm_machine_suite (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 39 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 39 tests.
