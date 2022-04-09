@@ -43,7 +43,7 @@ Running main() from /home/carson/Projects/msu/csci-366-spring2022/grading/script
 [ RUN      ] lmsm_machine_suite.test_sadd_instruction_adds_the_values_on_the_stack
 [       OK ] lmsm_machine_suite.test_sadd_instruction_adds_the_values_on_the_stack (0 ms)
 [ RUN      ] lmsm_machine_suite.test_sadd_instruction_properly_caps_values
-[       OK ] lmsm_machine_suite.test_sadd_instruction_properly_caps_values (0 ms)
+[       OK ] lmsm_machine_suite.test_sadd_instruction_properly_caps_values (1 ms)
 [ RUN      ] lmsm_machine_suite.test_sadd_instruction_enters_error_state_if_not_enough_elts
 [       OK ] lmsm_machine_suite.test_sadd_instruction_enters_error_state_if_not_enough_elts (0 ms)
 [ RUN      ] lmsm_machine_suite.test_ssub_instruction_subtracts_the_values_on_the_stack
@@ -80,8 +80,8 @@ Running main() from /home/carson/Projects/msu/csci-366-spring2022/grading/script
 [       OK ] lmsm_machine_suite.step_steps_to_the_next_instruction_and_executes_current (0 ms)
 [ RUN      ] lmsm_machine_suite.step_does_not_step_to_the_next_instruction_and_execute_if_machine_is_halted
 [       OK ] lmsm_machine_suite.step_does_not_step_to_the_next_instruction_and_execute_if_machine_is_halted (0 ms)
-[----------] 39 tests from lmsm_machine_suite (0 ms total)
+[----------] 39 tests from lmsm_machine_suite (4 ms total)
 
 [----------] Global test environment tear-down
-[==========] 39 tests from 1 test suite ran. (0 ms total)
+[==========] 39 tests from 1 test suite ran. (4 ms total)
 [  PASSED  ] 39 tests.
