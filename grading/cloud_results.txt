@@ -24,7 +24,7 @@
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running edu.montana.csci.csci366.strweb.ops.SorterTest
-[ERROR] Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.035 s <<< FAILURE! - in edu.montana.csci.csci366.strweb.ops.SorterTest
+[ERROR] Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.044 s <<< FAILURE! - in edu.montana.csci.csci366.strweb.ops.SorterTest
 [ERROR] testReverseSortingWorks  Time elapsed: 0.025 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 expected: <c
@@ -39,7 +39,7 @@ b
 c> but was: <>
 	at edu.montana.csci.csci366.strweb.ops.SorterTest.testParallelSortingWorks(SorterTest.java:24)
 
-[ERROR] testSortingWorks  Time elapsed: 0.001 s  <<< FAILURE!
+[ERROR] testSortingWorks  Time elapsed: 0.003 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 expected: <a
 b
@@ -47,7 +47,7 @@ c> but was: <>
 	at edu.montana.csci.csci366.strweb.ops.SorterTest.testSortingWorks(SorterTest.java:12)
 
 [INFO] Running edu.montana.csci.csci366.strweb.ops.LineLengthTransformerTest
-[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in edu.montana.csci.csci366.strweb.ops.LineLengthTransformerTest
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in edu.montana.csci.csci366.strweb.ops.LineLengthTransformerTest
 [ERROR] testLineLengthWorks  Time elapsed: 0 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 expected: <1
@@ -89,8 +89,8 @@ c> but was: <>
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  1.409 s
-[INFO] Finished at: 2022-05-01T16:40:18-06:00
+[INFO] Total time:  1.817 s
+[INFO] Finished at: 2022-05-01T17:20:28-06:00
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.1:test (default-test) on project csci-366-spring2022-cloud: There are test failures.
 [ERROR] 
