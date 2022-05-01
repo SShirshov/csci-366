@@ -13,14 +13,14 @@ Expected equality of these values:
 /home/carson/Projects/msu/csci-366-spring2022/grading/scripts/repos/simeon_shirshov/c/lmsm/googletest/assembler.cpp:24: Failure
 Expected equality of these values:
   instruction->slots
-    Which is: 21847
+    Which is: 22034
   2
 [  FAILED  ] instruction_construction.make_instruction_spushi_takes_two_slots (0 ms)
 [ RUN      ] instruction_construction.make_instruction_call_takes_three_slots
 /home/carson/Projects/msu/csci-366-spring2022/grading/scripts/repos/simeon_shirshov/c/lmsm/googletest/assembler.cpp:31: Failure
 Expected equality of these values:
   instruction->slots
-    Which is: 21847
+    Which is: 22034
   3
 [  FAILED  ] instruction_construction.make_instruction_call_takes_three_slots (0 ms)
 [ RUN      ] instruction_construction.make_instruction_properly_offsets_based_on_preceding_instruction
