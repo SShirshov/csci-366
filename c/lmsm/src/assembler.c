@@ -115,7 +115,7 @@ int asm_is_num(char * token){
     return 1;
 }
 
-int asm_find_label(instruction *root, char *label) {
+int asm_find_label(instruction *root, char *label)  {
     // TODO - scan the linked list for the given label, return -1 if not found
 //    int found = 0;
 //    char *next = NULL;
@@ -161,88 +161,137 @@ int asm_find_label(instruction *root, char *label) {
 
 void asm_parse_src(compilation_result * result, char * original_src){
 
+
+
+
     // copy over so strtok can mutate
     char * src = calloc(strlen(original_src) + 1, sizeof(char));
     strcat(src, original_src);
 
     instruction * last_instruction = NULL;
     instruction * current_instruction = NULL;
-
-    //foo out
-    //all our variables
+    //---------------------------------------------------------------------------------------------------------------
     char *type = NULL;
     char *label = NULL;
     char *label_reference = NULL;
     int value = 0;
 
-    char * token = strtok(src, " \n");
+    char * token  = strtok(src, " \n");
 
-    while(token != NULL) {
-        if (!asm_is_instruction((token))) {
-            //TODO capture label (MAYBE CAPTURED)
-            label = token;
-            token = strtok(NULL, " \n");
-//            printf("1.%s\n", label);
-//            printf("1.%s\n", token);
-        }
-        if (!asm_is_instruction((token))) {
+    while(token != NULL){
+        label = NULL;
+        if(!asm_is_instruction(token)){
             result->error = ASM_ERROR_UNKNOWN_INSTRUCTION;
             return;
         }else{
             type = token;
-            //maybe
-            char * token_temp = NULL;
-            token_temp = strtok(NULL, " \n");
-            if (asm_instruction_requires_arg(type) && token_temp == NULL){
+
+        }
+        label_reference = NULL;
+        value = 0;
+        if (asm_instruction_requires_arg(type)){
+
+            token = strtok(NULL, " \n");
+            if (asm_instruction_requires_arg(type) && token == NULL){
                 result->error = ASM_ERROR_ARG_REQUIRED;
                 return;
             }
-////            if(asm_is_instruction(type) && asm_is_instruction(token_temp)){
-////                current_instruction = asm_make_instruction(type, label, label_reference, value, last_instruction);
-////                if(result->root == NULL){
-////                    result->root = current_instruction;
-////                }
-////                last_instruction = current_instruction;
-////
-////                type = token_temp;
-////                label = NULL;
-////                label_reference = NULL;
-////                value = 0;
-//
-//            }
-            token = token_temp;
-            //maybe
-
-//            printf("2.%s\n", type);
-//            printf("2.%s\n", token);
-
-        }
-//        label_reference = NULL;
-        if(asm_instruction_requires_arg(type)){
-            //TODO - determine if arg is numeric or label
-            //error if arg required
+            //TODO - determin if arg is numeric
 
             if (asm_is_num(token)){
                 sscanf(token, "%d", &value);
-//                value = token;
-//                printf("num: %d\n", value);
-                    ///
             }else{
                 label_reference = token;
-//                printf("num2: %s\n", label);
             }
-
         }
-        current_instruction = asm_make_instruction(type, label, label_reference, value, last_instruction);
+
+        current_instruction = asm_make_instruction(type, label, label_reference, value,last_instruction);
 
         if(result->root == NULL){
             result->root = current_instruction;
+
         }
         last_instruction = current_instruction;
 
         token = strtok(NULL, " \n");
-
     }
+
+    //---------------------------------------------------------------------------------------------------------------
+//    //foo out
+//    //all our variables
+//    char *type = NULL;
+//    char *label = NULL;
+//    char *label_reference = NULL;
+//    int value = 0;
+//
+//    char * token = strtok(src, " \n");
+//
+//    while(token != NULL) {
+//        if (!asm_is_instruction((token))) {
+//            //TODO capture label (MAYBE CAPTURED)
+//            label = token;
+//            token = strtok(NULL, " \n");
+////            printf("1.%s\n", label);
+////            printf("1.%s\n", token);
+//        }
+//        if (!asm_is_instruction((token))) {
+//            result->error = ASM_ERROR_UNKNOWN_INSTRUCTION;
+//            return;
+//        }else{
+//            type = token;
+//            //maybe
+//            char * token_temp = NULL;
+//            token_temp = strtok(NULL, " \n");
+//            if (asm_instruction_requires_arg(type) && token_temp == NULL){
+//                result->error = ASM_ERROR_ARG_REQUIRED;
+//                return;
+//            }
+//////            if(asm_is_instruction(type) && asm_is_instruction(token_temp)){
+//////                current_instruction = asm_make_instruction(type, label, label_reference, value, last_instruction);
+//////                if(result->root == NULL){
+//////                    result->root = current_instruction;
+//////                }
+//////                last_instruction = current_instruction;
+//////
+//////                type = token_temp;
+//////                label = NULL;
+//////                label_reference = NULL;
+//////                value = 0;
+////
+////            }
+//            token = token_temp;
+//            //maybe
+//
+////            printf("2.%s\n", type);
+////            printf("2.%s\n", token);
+//
+//        }
+////        label_reference = NULL;
+//        if(asm_instruction_requires_arg(type)){
+//            //TODO - determine if arg is numeric or label
+//            //error if arg required
+//
+//            if (asm_is_num(token)){
+//                sscanf(token, "%d", &value);
+////                value = token;
+////                printf("num: %d\n", value);
+//                    ///
+//            }else{
+//                label_reference = token;
+////                printf("num2: %s\n", label);
+//            }
+//
+//        }
+//        current_instruction = asm_make_instruction(type, label, label_reference, value, last_instruction);
+//
+//        if(result->root == NULL){
+//            result->root = current_instruction;
+//        }
+//        last_instruction = current_instruction;
+//
+//        token = strtok(NULL, " \n");
+//
+//    }
 
     if (value > 999){
         value = 999;
