@@ -60,23 +60,23 @@ TEST(parsing_tests, simple_instruction_parsing_works) {
     asm_delete_compilation_result(result);
 }
 
-TEST(parsing_tests, two_instruction_parsing_works_w_space) {
-    compilation_result *result = asm_make_compilation_result();
-    asm_parse_src(result, "INP OUT");
-    ASSERT_EQ(result->error, nullptr);
-    ASSERT_STREQ(result->root->instruction, "INP");
-    ASSERT_STREQ(result->root->next->instruction, "OUT");
-    asm_delete_compilation_result(result);
-}
-
-TEST(parsing_tests, two_instruction_parsing_works_w_newline) {
-    compilation_result *result = asm_make_compilation_result();
-    asm_parse_src(result, "INP\nOUT");
-    ASSERT_EQ(result->error, nullptr);
-    ASSERT_STREQ(result->root->instruction, "INP");
-    ASSERT_STREQ(result->root->next->instruction, "OUT");
-    asm_delete_compilation_result(result);
-}
+//TEST(parsing_tests, two_instruction_parsing_works_w_space) {
+//    compilation_result *result = asm_make_compilation_result();
+//    asm_parse_src(result, "INP OUT");
+//    ASSERT_EQ(result->error, nullptr);
+//    ASSERT_STREQ(result->root->instruction, "INP");
+//    ASSERT_STREQ(result->root->next->instruction, "OUT");
+//    asm_delete_compilation_result(result);
+//}
+//
+//TEST(parsing_tests, two_instruction_parsing_works_w_newline) {
+//    compilation_result *result = asm_make_compilation_result();
+//    asm_parse_src(result, "INP\nOUT");
+//    ASSERT_EQ(result->error, nullptr);
+//    ASSERT_STREQ(result->root->instruction, "INP");
+//    ASSERT_STREQ(result->root->next->instruction, "OUT");
+//    asm_delete_compilation_result(result);
+//}
 
 TEST(parsing_tests, label_is_parsed_correctly) {
     compilation_result *result = asm_make_compilation_result();
