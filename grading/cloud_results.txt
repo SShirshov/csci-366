@@ -24,15 +24,15 @@
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running edu.montana.csci.csci366.strweb.ops.SorterTest
-[ERROR] Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.044 s <<< FAILURE! - in edu.montana.csci.csci366.strweb.ops.SorterTest
-[ERROR] testReverseSortingWorks  Time elapsed: 0.025 s  <<< FAILURE!
+[ERROR] Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.04 s <<< FAILURE! - in edu.montana.csci.csci366.strweb.ops.SorterTest
+[ERROR] testReverseSortingWorks  Time elapsed: 0.026 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 expected: <c
 b
 a> but was: <>
 	at edu.montana.csci.csci366.strweb.ops.SorterTest.testReverseSortingWorks(SorterTest.java:36)
 
-[ERROR] testParallelSortingWorks  Time elapsed: 0 s  <<< FAILURE!
+[ERROR] testParallelSortingWorks  Time elapsed: 0.001 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 expected: <a
 b
@@ -89,8 +89,8 @@ c> but was: <>
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  1.817 s
-[INFO] Finished at: 2022-05-01T17:20:28-06:00
+[INFO] Total time:  2.047 s
+[INFO] Finished at: 2022-05-02T08:34:33-06:00
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.1:test (default-test) on project csci-366-spring2022-cloud: There are test failures.
 [ERROR] 
