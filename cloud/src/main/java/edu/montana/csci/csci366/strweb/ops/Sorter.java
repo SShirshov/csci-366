@@ -1,5 +1,6 @@
 package edu.montana.csci.csci366.strweb.ops;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collections;
 
@@ -13,15 +14,21 @@ public class Sorter {
         _strings = strings;
     }
 
-    public String sort() {
-      return "";
+    public String sort() {//method used to sort characters
+        String[] split = _strings.split("\n|\r\n");
+        Arrays.sort(split);
+        return String.join("\n", split);
     }
 
     public String reverseSort() {
-      return "";
+        String[] split = _strings.split("\n|\r\n");
+        Arrays.sort(split, Collections.reverseOrder());
+        return  String.join("\n", split);
     }
 
     public String parallelSort() {
-      return "";
+        String[] split = _strings.split("\n|\r\n");
+        Arrays.parallelSort(split);
+        return  String.join("\n", split);
     }
 }

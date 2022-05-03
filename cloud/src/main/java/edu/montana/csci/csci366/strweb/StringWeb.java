@@ -10,6 +10,8 @@ import org.slf4j.LoggerFactory;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -56,13 +58,46 @@ public class StringWeb {
 
                 if ("/".equals(path)) {
                     // Parse HTTP Headers
+
                     Map<String, String> headers = new HashMap<>();
                     // TODO - parse request headers
+                    String line;
+                    do{
+                        line = inputReader.readLine();
+                        if(!line.isEmpty()){
+                            String[] split = line.split(":",2);
+//                            System.out.println(split[0]);
+//                            System.out.println(split[1]);
+                            headers.put(split[0],split[1].substring(1));
+                        }
 
+                    }while(!line.isEmpty());
                     LOGGER.info("Headers : " + headers);
 
                     String strings = "";
                     // TODO - parse request body
+                    if("POST".equals(method)){
+                        Map<String, String> parameters = new HashMap<>();
+                        if(headers.containsKey("Content-Length")){
+                            int length = Integer.parseInt((headers.get("Content-Length")));
+                            char[] buffer = new char[length];
+                            inputReader.read(buffer, 0, length);
+                            String strBody = new String(buffer);
+//                            System.out.println(strBody);
+                            for (String param: strBody.split("&")){
+                                String[] split = param.split("=",2);
+                                String name = URLDecoder.decode(split[0], StandardCharsets.UTF_8);
+                                String value = URLDecoder.decode(split[1], StandardCharsets.UTF_8);
+                                parameters.put(name,value);
+
+                            }
+                        }
+                        strings = parameters.get("strings");
+                        if(parameters.containsKey("op")){
+                            strings = doOperation(parameters.get("op"), strings);
+                        }
+
+                    }
 
                     // build a response
                     if ("text/plain".equals(headers.get("Content-Type"))) {

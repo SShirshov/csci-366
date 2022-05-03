@@ -232,7 +232,6 @@ void asm_parse_src(compilation_result * result, char * original_src){
     }
 
 
-
     //
     //       generate the following errors as appropriate:
     //
