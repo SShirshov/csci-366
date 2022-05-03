@@ -232,8 +232,7 @@ void asm_parse_src(compilation_result * result, char * original_src){
     }
 
 
-    //TODO - generate a linked list of instructions and store the first into
-    //       the result->root
+
     //
     //       generate the following errors as appropriate:
     //
