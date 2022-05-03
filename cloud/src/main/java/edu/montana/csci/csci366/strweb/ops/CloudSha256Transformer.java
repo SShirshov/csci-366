@@ -30,9 +30,31 @@ public class CloudSha256Transformer {
     }
 
     public String toSha256Hashes() {
-        return "";
-    }
+        try {
+            int index = _strings.indexOf("\n", _strings.length() / 2);
 
+            String firstChunk = _strings.substring(0, index);
+            var client = HttpClient.newHttpClient();
+            var request = HttpRequest.newBuilder()
+                    .uri(URI.create(NODES.get(0)))
+                    .headers("Content-Type", "text/plain")
+                    .POST(HttpRequest.BodyPublishers.ofString("op=Line+Sha256&strings=" + URLEncoder.encode(firstChunk, StandardCharsets.UTF_8.name())))
+                    .build();
+            HttpResponse<String> firstResponse = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+            String secondChunk = _strings.substring(index);
+            var request2 = HttpRequest.newBuilder()
+                    .uri(URI.create(NODES.get(1)))
+                    .headers("Content-Type", "text/plain")
+                    .POST(HttpRequest.BodyPublishers.ofString("op=Line+Sha256&strings=" + URLEncoder.encode(secondChunk, StandardCharsets.UTF_8.name())))
+                    .build();
+            HttpResponse<String> secondResponse = client.send(request2, HttpResponse.BodyHandlers.ofString());
+
+            return firstResponse.body() + secondResponse.body();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
 
 
