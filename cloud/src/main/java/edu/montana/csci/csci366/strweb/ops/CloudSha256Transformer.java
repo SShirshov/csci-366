@@ -30,7 +30,9 @@ public class CloudSha256Transformer {
     }
 
     public String toSha256Hashes() {
-      return "";
+        return "";
     }
 
 }
+
+

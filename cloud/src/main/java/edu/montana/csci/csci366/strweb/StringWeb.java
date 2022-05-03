@@ -180,8 +180,8 @@ public class StringWeb {
 
     private void renderResponseHeaders(StringBuilder response, String responseVals) {
         response.append("HTTP/1.1 ").append(responseVals).append("\n")
-                .append("MSU WebServer : 1.0\n")
-                .append("Date : ").append(new Date()).append("\n").append("\n");
+                .append("MSU-WebServer: 1.0\n")
+                .append("Date: ").append(new Date()).append("\n").append("\n");
     }
 
     private void render404(StringBuilder response, String path) {
