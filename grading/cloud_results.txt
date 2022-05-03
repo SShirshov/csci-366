@@ -9,11 +9,7 @@
 [INFO] skip non existing resourceDirectory /home/carson/Projects/msu/csci-366-spring2022/grading/scripts/repos/simeon_shirshov/cloud/src/main/resources
 [INFO] 
 [INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ csci-366-spring2022-cloud ---
-[INFO] Changes detected - recompiling the module!
-[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
-[INFO] Compiling 12 source files to /home/carson/Projects/msu/csci-366-spring2022/grading/scripts/repos/simeon_shirshov/cloud/target/classes
-[INFO] /home/carson/Projects/msu/csci-366-spring2022/grading/scripts/repos/simeon_shirshov/cloud/src/main/java/edu/montana/csci/csci366/demo/concurrency/Semaphors.java: /home/carson/Projects/msu/csci-366-spring2022/grading/scripts/repos/simeon_shirshov/cloud/src/main/java/edu/montana/csci/csci366/demo/concurrency/Semaphors.java uses unchecked or unsafe operations.
-[INFO] /home/carson/Projects/msu/csci-366-spring2022/grading/scripts/repos/simeon_shirshov/cloud/src/main/java/edu/montana/csci/csci366/demo/concurrency/Semaphors.java: Recompile with -Xlint:unchecked for details.
+[INFO] Nothing to compile - all classes are up to date
 [INFO] 
 [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ csci-366-spring2022-cloud ---
 [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
@@ -30,9 +26,9 @@
 [INFO] Running edu.montana.csci.csci366.strweb.ops.SorterTest
 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in edu.montana.csci.csci366.strweb.ops.SorterTest
 [INFO] Running edu.montana.csci.csci366.strweb.ops.LineLengthTransformerTest
-[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in edu.montana.csci.csci366.strweb.ops.LineLengthTransformerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in edu.montana.csci.csci366.strweb.ops.LineLengthTransformerTest
 [INFO] Running edu.montana.csci.csci366.strweb.ops.Sha256TransformerTest
-[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in edu.montana.csci.csci366.strweb.ops.Sha256TransformerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in edu.montana.csci.csci366.strweb.ops.Sha256TransformerTest
 [INFO] 
 [INFO] Results:
 [INFO] 
@@ -41,6 +37,6 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  2.259 s
-[INFO] Finished at: 2022-05-03T10:35:13-06:00
+[INFO] Total time:  1.388 s
+[INFO] Finished at: 2022-05-03T12:35:06-06:00
 [INFO] ------------------------------------------------------------------------
