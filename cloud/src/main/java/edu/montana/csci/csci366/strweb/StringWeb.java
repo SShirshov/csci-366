@@ -51,6 +51,7 @@ public class StringWeb {
             StringBuilder response = new StringBuilder();
             try {
                 // Determine request type & path
+                //read resource at the root directory using GET/http1.1 protocal
                 String requestInfo = inputReader.readLine();
                 LOGGER.info("Request Info: " + requestInfo);
                 String[] requestInfoArr = requestInfo.split(" ");
@@ -60,43 +61,62 @@ public class StringWeb {
                 if ("/".equals(path)) {
                     // Parse HTTP Headers
 
+                    //create hashmap to store operations and strings for operations
                     Map<String, String> headers = new HashMap<>();
-                    // TODO - parse request headers
+                    // Done tOD - parse request headers
 
                     //header parsing
                     String line;
                     do{
+                        //read line of text from income request
                         line = inputReader.readLine();
+                        //split current line if line isn't empty
                         if(!line.isEmpty()){
                             //Split on the first semi-colon and so forth
+                            //http headers have syntax name colon value that why we limit with 2
                             String[] split = line.split(":",2);
 //                            System.out.println(split[0]);
 //                            System.out.println(split[1]);
-                            //knock off preceding white space
+
+                            //knock off preceding white space ie if we have "foo: bar" the string after
+                            // semicolon would be " bar" we make it "bar"
+                            //put values of split 0 and split 1 into hash map headers
+                            //substring 1 gets rid of empty space
                             headers.put(split[0],split[1].substring(1));
                         }
 
-                    }while(!line.isEmpty());
+                    }while(!line.isEmpty());// parse while line is not empty ensuring we parse the whole line
                     LOGGER.info("Headers : " + headers);
 
                     String strings = "";
-                    // TODO - parse request body
+                    // done TOD - parse request body
 
-                    // if method for request is post we need additional work to extract parameters.
+                    // if method for request is POST we need additional work to extract parameters. like check for Body
                     if("POST".equals(method)){
+                        // create hash map that will store parameters
                         Map<String, String> parameters = new HashMap<>();
+                        //if there's a body there will be content length header which we need to parse
                         if(headers.containsKey("Content-Length")){
                             //gives us exactly how many bites are in the body
                             int length = Integer.parseInt((headers.get("Content-Length")));
                             //grab elements from body
                             char[] buffer = new char[length];
+                            //reads in into buffer length number of bytes
                             inputReader.read(buffer, 0, length);
+                            //creates string from buffer
                             String strBody = new String(buffer);
+                            //strbody will look something like a%0D%0Ac%0Ab&op=Sort (url encoding)
 //                            System.out.println(strBody);
                             //parsing to split up name value pairs which are url encoded in body
                             // ends up giving us a hash map called parameters which has the values
+
+                            //we loop over ever "param" of strbody splitting a%0D%0Ac%0Ab&op=Sort into a%0D%0Ac%0Ab
+                            // and op=Sort
                             for (String param: strBody.split("&")){
+                                //split param by the = char getting op and Sort
                                 String[] split = param.split("=",2);
+                                //decode the value and name from url encoding to readable like a%0D%0Ac%0Ab from
+                                // our example into something like "a\nc\nb" (really should only need to decode value)
                                 String name = URLDecoder.decode(split[0], StandardCharsets.UTF_8);
                                 String value = URLDecoder.decode(split[1], StandardCharsets.UTF_8);
                                 //put the parsed value into parameters hash map
@@ -109,6 +129,7 @@ public class StringWeb {
 
                         //if there is an operation passed then we call a function which does operation on the strings in our case the....
                         //operations are sort, reverse sort, parallel sort, line length, sha256 line, and cloud sha256
+                        //the functions return the modified sent strings back
                         if(parameters.containsKey("op")){
                             strings = doOperation(parameters.get("op"), strings);
                         }
@@ -127,6 +148,7 @@ public class StringWeb {
             } catch (Exception e) {
                 renderErrorMessage(response, e);
             }
+            //write response
             LOGGER.info("Responding With : \n\n" + response);
             outputWriter.println(response);
             outputWriter.println("\n\n");
@@ -140,6 +162,8 @@ public class StringWeb {
     // Operation Dispatch
     //====================================================================
 
+
+    //applies correct operation that is requested
     private String doOperation(String op, String strings) {
         if (op.equals("Sort")) {
             Sorter sorter = new Sorter(strings);
