@@ -15,7 +15,9 @@ import java.util.concurrent.ThreadPoolExecutor;
  */
 public class Sha256Transformer {
     String[] _lines;
+    //create new executor that will be used to execute submitted tasks using one of in this case 10 pooled threads
     ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(10);
+
     public Sha256Transformer(String strings) {
         _lines = strings.split("\n");
     }

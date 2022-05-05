@@ -8,7 +8,7 @@ import java.util.concurrent.CountDownLatch;
  */
 public class LineLengthTransformer {
     String[] _lines;
-
+    //
     public LineLengthTransformer(String strings) {
         //split apart input string into each line
         _lines = strings.split("\n|\r\n");
