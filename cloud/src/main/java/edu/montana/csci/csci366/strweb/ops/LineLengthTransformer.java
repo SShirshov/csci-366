@@ -8,7 +8,7 @@ import java.util.concurrent.CountDownLatch;
  */
 public class LineLengthTransformer {
     String[] _lines;
-    //
+    //get assign input
     public LineLengthTransformer(String strings) {
         //split apart input string into each line
         _lines = strings.split("\n|\r\n");
@@ -37,7 +37,7 @@ public class LineLengthTransformer {
         }catch(InterruptedException e){//throw exception if thread is interupted while waiting, sleeping, or occupied
             throw new RuntimeException(e);
         }
-        //join the split array back into on string
+        //join the split array back into on string and return string
         return String.join("\n",_lines);
     }
     //runnable class for use in our toLengths function which will be assigned to threads
