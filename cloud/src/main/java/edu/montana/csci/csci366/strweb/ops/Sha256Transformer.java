@@ -16,6 +16,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 public class Sha256Transformer {
     String[] _lines;
     //create new executor that will be used to execute submitted tasks using one of in this case 10 pooled threads
+    // allows for capping number of threads at start hopefully eliminating the possibility of crashing
     ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(10);
     //get assign input
     public Sha256Transformer(String strings) {
@@ -35,7 +36,7 @@ public class Sha256Transformer {
         for (int i = 0; i < _lines.length; i++) {
             //create new runnable sha256Computer that we will assign to a thread
             Sha256Computer sha256Computer = new Sha256Computer(i, latch);
-            //submmit task to executor which then uses a pooled thread to execute runnable
+            //submmit task to executor which then uses a pooled thread to execute task/runnable
             executor.execute(sha256Computer);
         }
         //ensure that the function does not return before all threads have finished
