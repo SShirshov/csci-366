@@ -45,7 +45,7 @@ public class CloudSha256Transformer {
                     .uri(URI.create(NODES.get(0)))
                     //assign headers of http request
                     .headers("Content-Type", "text/plain")
-                    //set operator to be used + urlencoded version of what we want processed by operator
+                    //set operator to be used + url-encoded version of what we want processed by operator
                     .POST(HttpRequest.BodyPublishers.ofString("op=Line+Sha256&strings=" + URLEncoder.encode(firstChunk, StandardCharsets.UTF_8.name())))
                     .build();
             //send POST for the first chunk to first server http://localhost:8001 with operation Line+Sha256
@@ -53,16 +53,16 @@ public class CloudSha256Transformer {
 
             //repeat the same thing for the second half aka secondchunk and send it to second node or second server
             String secondChunk = _strings.substring(index);
-            //use http client to take first chunck and create POST
+            //use http client to take second chunck and create POST
             var request2 = HttpRequest.newBuilder()
-                    //get first entry in array of cloud nodes or servers
+                    //get second entry in array of cloud nodes or servers
                     .uri(URI.create(NODES.get(1)))
                     //assign headers of http request
                     .headers("Content-Type", "text/plain")
-                    //set operator to be used + urlencoded version of what we want processed by operator
+                    //set operator to be used + url-encoded version of what we want processed by operator
                     .POST(HttpRequest.BodyPublishers.ofString("op=Line+Sha256&strings=" + URLEncoder.encode(secondChunk, StandardCharsets.UTF_8.name())))
                     .build();
-            //send POST for the first chunk to first server http://localhost:8001 with operation Line+Sha256
+            //send POST for the second chunk to second server http://localhost:8002 with operation Line+Sha256
             HttpResponse<String> secondResponse = client.send(request2, HttpResponse.BodyHandlers.ofString());
 
             // since normally the two requests we send are asynchronous and don't wait for one another we ask for
