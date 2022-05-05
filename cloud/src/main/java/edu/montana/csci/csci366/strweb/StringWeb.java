@@ -28,6 +28,7 @@ public class StringWeb {
     //====================================================================
 
     private void run() throws IOException {
+        //new up server socket port default port is 8000
         ServerSocket socket = new ServerSocket(_port);
         LOGGER.info("Listening on http://localhost:" + _port);
         while (true) {
@@ -61,13 +62,17 @@ public class StringWeb {
 
                     Map<String, String> headers = new HashMap<>();
                     // TODO - parse request headers
+
+                    //header parsing
                     String line;
                     do{
                         line = inputReader.readLine();
                         if(!line.isEmpty()){
+                            //Split on the first semi-colon and so forth
                             String[] split = line.split(":",2);
 //                            System.out.println(split[0]);
 //                            System.out.println(split[1]);
+                            //knock off preceding white space
                             headers.put(split[0],split[1].substring(1));
                         }
 
@@ -76,23 +81,34 @@ public class StringWeb {
 
                     String strings = "";
                     // TODO - parse request body
+
+                    // if method for request is post we need additional work to extract parameters.
                     if("POST".equals(method)){
                         Map<String, String> parameters = new HashMap<>();
                         if(headers.containsKey("Content-Length")){
+                            //gives us exactly how many bites are in the body
                             int length = Integer.parseInt((headers.get("Content-Length")));
+                            //grab elements from body
                             char[] buffer = new char[length];
                             inputReader.read(buffer, 0, length);
                             String strBody = new String(buffer);
 //                            System.out.println(strBody);
+                            //parsing to split up name value pairs which are url encoded in body
+                            // ends up giving us a hash map called parameters which has the values
                             for (String param: strBody.split("&")){
                                 String[] split = param.split("=",2);
                                 String name = URLDecoder.decode(split[0], StandardCharsets.UTF_8);
                                 String value = URLDecoder.decode(split[1], StandardCharsets.UTF_8);
+                                //put the parsed value into parameters hash map
+                                //Contains two values op and strings
                                 parameters.put(name,value);
 
                             }
                         }
                         strings = parameters.get("strings");
+
+                        //if there is an operation passed then we call a function which does operation on the strings in our case the....
+                        //operations are sort, reverse sort, parallel sort, line length, sha256 line, and cloud sha256
                         if(parameters.containsKey("op")){
                             strings = doOperation(parameters.get("op"), strings);
                         }
