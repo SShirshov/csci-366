@@ -41,6 +41,7 @@ public class Sorter {
         String[] split = _strings.split("\n|\r\n");
         //use array classes parallel sort function to sort our "split" array by spliting it further into sub arrays
         // and sorting them before merging them again into one sorted array
+        //sorts in parallel across multiple threads
         Arrays.parallelSort(split);
         //join split array back into single string and return the string
         return  String.join("\n", split);
