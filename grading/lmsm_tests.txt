@@ -137,7 +137,7 @@ Running main() from /home/carson/Projects/msu/csci-366-spring2022/grading/script
 [ RUN      ] lmsm_machine_suite.test_pop_instruction_enters_error_state_if_nothing_to_pop
 [       OK ] lmsm_machine_suite.test_pop_instruction_enters_error_state_if_nothing_to_pop (0 ms)
 [ RUN      ] lmsm_machine_suite.test_dup_instruction_duplicates_top_of_stack
-[       OK ] lmsm_machine_suite.test_dup_instruction_duplicates_top_of_stack (0 ms)
+[       OK ] lmsm_machine_suite.test_dup_instruction_duplicates_top_of_stack (1 ms)
 [ RUN      ] lmsm_machine_suite.test_sadd_instruction_adds_the_values_on_the_stack
 [       OK ] lmsm_machine_suite.test_sadd_instruction_adds_the_values_on_the_stack (0 ms)
 [ RUN      ] lmsm_machine_suite.test_sadd_instruction_properly_caps_values
