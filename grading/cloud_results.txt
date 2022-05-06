@@ -28,11 +28,11 @@
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running edu.montana.csci.csci366.strweb.ops.SorterTest
-[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s - in edu.montana.csci.csci366.strweb.ops.SorterTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 s - in edu.montana.csci.csci366.strweb.ops.SorterTest
 [INFO] Running edu.montana.csci.csci366.strweb.ops.LineLengthTransformerTest
-[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in edu.montana.csci.csci366.strweb.ops.LineLengthTransformerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in edu.montana.csci.csci366.strweb.ops.LineLengthTransformerTest
 [INFO] Running edu.montana.csci.csci366.strweb.ops.Sha256TransformerTest
-[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in edu.montana.csci.csci366.strweb.ops.Sha256TransformerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in edu.montana.csci.csci366.strweb.ops.Sha256TransformerTest
 [INFO] 
 [INFO] Results:
 [INFO] 
@@ -41,6 +41,6 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  2.676 s
-[INFO] Finished at: 2022-05-05T14:43:59-06:00
+[INFO] Total time:  3.272 s
+[INFO] Finished at: 2022-05-05T20:21:32-06:00
 [INFO] ------------------------------------------------------------------------
